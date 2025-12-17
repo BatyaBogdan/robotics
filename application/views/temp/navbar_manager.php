@@ -7,11 +7,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarColor03">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link text-dark fw-medium" aria-current="page" href="main/index">Главная</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-medium" aria-current="page" href="main/index">Главная</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark fw-medium" href="manager/sales_book">Книга продаж</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-medium" href="manager/orders">Заявки</a>
                     </li>
                 </ul>
                 <div class="d-flex">

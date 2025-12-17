@@ -15,9 +15,24 @@ class Orders extends CI_Model{
         $result = $this->db->query($sql, array($id_user));
         return $result->result_array();
     }
+    public function select_orders(){
+        $sql = "SELECT orders.id_order, users.first_name, products.product_name, robots_type.robot_type, orders.quantity, orders.order_date, orders.date_pay, orders.type_pay, orders.sum, orders.status from orders, products, robots_type, users where orders.id_product = products.id_product and products.id_type = robots_type.id_type and users.id_user = orders.id_user ORDER BY orders.id_order ASC";
+        $result = $this->db->query($sql);
+        return $result->result_array();
+    }
     public function update_pay($date_pay, $id_order){
         $sql = "UPDATE orders SET date_pay = ? where id_order = ?";
         $result = $this->db->query($sql, array($date_pay, $id_order));
+        return $result;
+    }
+    public function update_order_accept($id_order){
+        $sql = "UPDATE orders SET status = 2 where id_order = ?";
+        $result = $this->db->query($sql, array($id_order));
+        return $result;
+    }
+    public function update_order_end($id_order){
+        $sql = "UPDATE orders SET status = 3 where id_order = ?";
+        $result = $this->db->query($sql, array($id_order));
         return $result;
     }
     public function select_sales_book($date_start, $date_end)
